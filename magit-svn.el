@@ -79,13 +79,21 @@
 
 ;;; Utilities
 
-(defun magit-svn-get-url ()
-  (magit-git-string "svn" "info" "--url"))
+(defvar-local magit-svn-info nil)
 
-(defun magit-svn-get-rev ()
-  (--when-let (--first (string-match "^Revision: \\(.+\\)" it)
-                       (magit-git-lines "svn" "info"))
-    (match-string 1 it)))
+(defun magit-svn-info ()
+  (or magit-svn-info
+      (let ((lines (magit-git-lines "svn" "info"))
+            (plist nil))
+        (--when-let (--first (string-match "^Revision: \\(.+\\)" it) lines)
+          (setq plist (plist-put plist :rev (match-string 1 it))))
+        (--when-let (--first (string-match "^URL: \\(.+\\)" it) lines)
+          (setq plist (plist-put plist :url (match-string 1 it))))
+        (setq magit-svn-info plist))))
+
+(defun magit-svn-reset-info () (setq magit-svn-info nil))
+(defun magit-svn-get-url () (plist-get (magit-svn-info) :url))
+(defun magit-svn-get-rev () (plist-get (magit-svn-info) :rev))
 
 (defun magit-svn-get-ref ()
   (--when-let (--first (string-match "^Remote Branch: \\(.+\\)" it)
@@ -195,11 +203,13 @@ in `magit-svn-external-directories' and runs
                             'magit-insert-svn-unpushed
                             'magit-insert-unpushed-commits t t)
     (magit-add-section-hook 'magit-status-headers-hook
-                            'magit-insert-svn-remote nil t t))
+                            'magit-insert-svn-remote nil t t)
+    (add-hook 'magit-pre-refresh-hook 'magit-svn-reset-info t t))
    (t
     (remove-hook 'magit-status-sections-hook 'magit-insert-svn-unpulled t)
     (remove-hook 'magit-status-sections-hook 'magit-insert-svn-unpushed t)
-    (remove-hook 'magit-status-headers-hook  'magit-insert-svn-remote t)))
+    (remove-hook 'magit-status-headers-hook  'magit-insert-svn-remote t)
+    (remove-hook 'magit-pre-refresh-hook     'magit-svn-reset-info t)))
   (when (called-interactively-p 'any)
     (magit-refresh)))
 
