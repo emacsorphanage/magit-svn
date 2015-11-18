@@ -240,9 +240,9 @@ in `magit-svn-external-directories' and runs
 (defun magit-insert-svn-remote ()
   (--when-let (magit-svn-get-rev)
     (magit-insert-section (line)
-      (magit-insert (format "%-10s%s from %s\n" "Remote:"
-                            (propertize (concat "r" it) 'face 'magit-hash)
-                            (magit-svn-get-url))))))
+      (insert (format "%-10s%s from %s\n" "Remote:"
+                      (propertize (concat "r" it) 'face 'magit-hash)
+                      (magit-svn-get-url))))))
 
 ;;; magit-svn.el ends soon
 
