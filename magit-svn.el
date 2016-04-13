@@ -7,6 +7,7 @@
 ;; Keywords: vc tools
 ;; Package: magit-svn
 ;; Package-Requires: ((emacs "24.4") (magit "2.1.0"))
+;; Version: 2.1.1
 
 ;; Magit is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by
