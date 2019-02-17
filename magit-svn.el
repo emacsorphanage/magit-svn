@@ -56,6 +56,9 @@
 (require 'cl-lib)
 (require 'dash)
 
+(eval-when-compile
+  (require 'subr-x))
+
 (require 'magit)
 
 (declare-function find-lisp-find-files-internal 'find-lisp)
