@@ -51,6 +51,8 @@
 ;;
 ;;   (add-hook 'magit-mode-hook 'magit-svn-mode)
 
+;; This package is unmaintained see the README for more information.
+
 ;;; Code:
 
 (require 'cl-lib)

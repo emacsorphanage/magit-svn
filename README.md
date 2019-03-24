@@ -1,3 +1,9 @@
+# Unmaintained
+
+I never used this package myself and no longer want to maintain it.
+I might still fix bugs but all feature requests will be closed.
+Contact me if you are interested in becoming the new maintainer.
+
 # `git svn` extension for Magit
 
 This package provides basic support for `git svn`, a Git command
