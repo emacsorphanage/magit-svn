@@ -334,7 +334,7 @@ in `magit-svn-external-directories' and runs
 
 ;;; magit-svn.el ends soon
 
-(define-obsolete-function-alias 'turn-on-magit-svn 'magit-svn-mode)
+(define-obsolete-function-alias 'turn-on-magit-svn 'magit-svn-mode "Sep 3, 2014")
 
 (provide 'magit-svn)
 ;; Local Variables:
