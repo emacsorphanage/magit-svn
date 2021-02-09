@@ -1,6 +1,6 @@
 ;;; magit-svn.el --- Git-Svn extension for Magit
 
-;; Copyright (C) 2010-2019  The Magit Project Contributors
+;; Copyright (C) 2010-2021  The Magit Project Contributors
 
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
 ;; Keywords: vc tools
@@ -332,10 +332,7 @@ in `magit-svn-external-directories' and runs
                       (propertize (concat "r" it) 'face 'magit-hash)
                       (magit-svn-get-url))))))
 
-;;; magit-svn.el ends soon
-
-(define-obsolete-function-alias 'turn-on-magit-svn 'magit-svn-mode)
-
+;;; _
 (provide 'magit-svn)
 ;; Local Variables:
 ;; indent-tabs-mode: nil
