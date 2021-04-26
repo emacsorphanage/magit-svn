@@ -5,7 +5,7 @@
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
 ;; Keywords: vc tools
 ;; Package: magit-svn
-;; Package-Requires: ((emacs "24.4") (magit "2.1.0"))
+;; Package-Requires: ((emacs "25.1") (magit "2.90.1"))
 
 ;; Magit is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by
