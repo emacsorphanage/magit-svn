@@ -6,6 +6,7 @@
 ;; Keywords: vc tools
 ;; Package: magit-svn
 ;; Package-Requires: ((emacs "25.1") (magit "2.90.1") (transient "0.3.2"))
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; Magit is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by
