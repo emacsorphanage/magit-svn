@@ -5,7 +5,7 @@
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
 ;; Keywords: vc tools
 ;; Package: magit-svn
-;; Package-Requires: ((emacs "25.1") (magit "2.90.1"))
+;; Package-Requires: ((emacs "25.1") (magit "2.90.1") (transient "0.3.2"))
 
 ;; Magit is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by
@@ -60,6 +60,8 @@
 
 (eval-when-compile
   (require 'subr-x))
+
+(require 'transient)
 
 (require 'magit)
 
