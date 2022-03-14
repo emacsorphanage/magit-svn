@@ -1,6 +1,6 @@
 ;;; magit-svn.el --- Git-Svn extension for Magit
 
-;; Copyright (C) 2010-2021  The Magit Project Contributors
+;; Copyright (C) 2010-2022  The Magit Project Contributors
 
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
 ;; Keywords: vc tools
@@ -180,7 +180,7 @@ If USE-CACHE is non-nil, use the cached information."
 
 ;;; Commands
 
-(define-transient-command magit-svn ()
+(transient-define-prefix magit-svn ()
   "Invoke `git-svn' commands."
   :man-page "git-svn"
   ["Arguments"
