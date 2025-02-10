@@ -1,4 +1,4 @@
-;;; magit-svn.el --- Git-Svn extension for Magit
+;;; magit-svn.el --- Git-Svn extension for Magit  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2010-2025  The Magit Project Contributors
 
@@ -252,7 +252,7 @@ in `magit-svn-external-directories' and runs
   (require 'find-lisp)
   (--if-let (find-lisp-find-files-internal
              (expand-file-name magit-svn-externals-dir)
-             (lambda (file dir)
+             (lambda (file _dir)
                (string-equal file ".git"))
              'find-lisp-default-directory-predicate)
       (dolist (external it)
