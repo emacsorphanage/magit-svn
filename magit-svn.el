@@ -1,6 +1,6 @@
 ;;; magit-svn.el --- Git-Svn extension for Magit
 
-;; Copyright (C) 2010-2022  The Magit Project Contributors
+;; Copyright (C) 2010-2025  The Magit Project Contributors
 
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
 ;; Keywords: vc tools
