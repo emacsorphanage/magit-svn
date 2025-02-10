@@ -315,16 +315,17 @@ in `magit-svn-external-directories' and runs
   (--when-let (magit-svn-get-ref)
     (magit-insert-section (svn-unpulled)
       (magit-insert-heading "Unpulled svn commits:")
-      (magit-insert-log (format "HEAD..%s" it)))))
+      (magit--insert-log nil (format "HEAD..%s" it)))))
 
 (defun magit-insert-svn-unpushed ()
   (--when-let (magit-svn-get-ref)
     (magit-insert-section (svn-unpushed)
       (magit-insert-heading "Unpushed git commits:")
-      (magit-insert-log (format "%s..HEAD" it)))))
+      (magit--insert-log nil (format "%s..HEAD" it)))))
 
 (magit-define-section-jumper magit-jump-to-svn-unpulled
   "Unpulled svn commits" svn-unpulled)
+
 (magit-define-section-jumper magit-jump-to-svn-unpushed
   "Unpushed git commits" svn-unpushed)
 
